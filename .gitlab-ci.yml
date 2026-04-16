@@ -6,15 +6,15 @@ stages:
 
 include:
   # Unit testing
-  - component: $CI_SERVER_FQDN/bioinformatics/pipelines/python/unittesting@0.1.2
+  - component: $CI_SERVER_FQDN/bioinformatics/pipelines/python/unittesting@0.2.0
     inputs:
       stage: test
   # build packages
-  - component: $CI_SERVER_FQDN/$CI_PROJECT_PATH/build_package@$CI_COMMIT_SHA
+  - component: $CI_SERVER_FQDN/bioinformatics/pipelines/python/build_package@0.2.0
     inputs:
       stage: build
   # publish packages
-  - component: $CI_SERVER_FQDN/$CI_PROJECT_PATH/publish_package@$CI_COMMIT_SHA
+  - component: $CI_SERVER_FQDN/bioinformatics/pipelines/python/publish_package@0.2.0
     inputs:
       job_name: publish_filesys_package
       stage: publish
