@@ -1,5 +1,5 @@
 import pytest
-from src.idms.common.filesys.fs_base import fsFactory
+from idms.common.filesys.fs_base import fsFactory
 
 @pytest.mark.unit
 def test_fsfactory():
