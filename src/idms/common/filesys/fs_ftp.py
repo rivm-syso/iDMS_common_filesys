@@ -6,7 +6,6 @@ Created on Thu May 25 11:00:00 2023
 @author: jansser
 """
 
-import os
 import stat
 from datetime import datetime
 
@@ -47,7 +46,7 @@ class file_ftp(fsobject_base):
         return self.fso.ftp.open(self.path, mode)
 
     def set_mtime(self, mtime):
-        # not implemented in ftputil, using raw FTP via underlying ftplib 
+        # not implemented in ftputil, using raw FTP via underlying ftplib
         # this is not implemented on all FTP servers, or you may lack rights!
         formatted_time = datetime.utcfromtimestamp(mtime).strftime('%Y%m%d%H%M%S')
         self.ftp._session.voidcmd(f"MFMT {self.path} {formatted_time}")
