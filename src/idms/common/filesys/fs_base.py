@@ -10,7 +10,6 @@ import logging
 import os
 import shutil
 from abc import ABC, abstractmethod
-from datetime import datetime
 import time
 
 BUF_SIZE = 1024 * 1024 * 4
@@ -32,21 +31,21 @@ class fsFactory():
     def register(self, name, creator, optionText=""):
         self._fscreators[name] = creator
         self._optiontext[name] = optionText
-        
+
     def getfs(self, name, **params):
         creator = self._fscreators.get(name)
         if not creator:
             raise ValueError(name)
         return creator(**params)
-    
+
     def listfs(self):
         print('Filesystem   Options\n===============================================')
         for i in self._fscreators:
             print("%-10s %-40s" % (i, self._optiontext[i]))
 
-        
+
 factory = fsFactory()
-    
+
 
 class fsobject_base(ABC):
     def __init__(self, fso, path):
