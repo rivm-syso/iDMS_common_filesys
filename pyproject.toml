@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "idms-common-filesys"
 dynamic = ["version"]
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 description = "A filesystem abstraction for IRODS, FTP, etc"
 dependencies = []
 
