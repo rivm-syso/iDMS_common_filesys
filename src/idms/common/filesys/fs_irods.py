@@ -144,12 +144,8 @@ class fs_irods(fs_base):
         self.resource = resource
 
     def cleanup(self):
-        if self.irods_session:
-            self.irods_session.cleanup()
-            self.irods_session = None
-
-    def __del__(self):
-        self.cleanup()
+        pass
+        # Do not clean irods_session anymore. It might be used elsewhere
 
     def ls(self, path):
         result = []
