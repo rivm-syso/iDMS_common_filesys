@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "idms-common-filesys"
 dynamic = ["version"]
-requires-python = ">=3.11"
+requires-python = ">=3.8"
 description = "A filesystem abstraction for IRODS, FTP, etc"
 dependencies = [
     "ftputil",
@@ -27,8 +27,8 @@ search_parent_directories = true
 
 [dependency-groups]
 dev = [
-    "pytest>=9.0.2",
-    "pytest-cov>=7.0.0"
+    "pytest>=8.0.0",
+    "pytest-cov>=5.0.0"
 ]
 
 [tool.pytest]
