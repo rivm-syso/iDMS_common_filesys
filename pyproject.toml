@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "idms-common-filesys"
+license = { text = "EUPL-1.2" }
 dynamic = ["version"]
 requires-python = ">=3.8"
 description = "A filesystem abstraction for IRODS, FTP, etc"
