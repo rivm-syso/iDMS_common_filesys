@@ -111,7 +111,11 @@ class folder_irods(fsobject_base):
         if not self.irods_object.metadata.get_all(name):
             self.setmeta(name, default, '')
         return self.getmeta(name)
-
+    
+    def utc_mtime(self):
+        mtime = cal.timegm(self.irods_object.modify_time.timetuple())
+        return math.floor(mtime)
+    
     #def create_time(self2):
     #    return self.irods_object.create_time
 
